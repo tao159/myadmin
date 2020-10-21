@@ -37,11 +37,14 @@ app.use(
 );
 
 // logger
-app.use(async (ctx, next) => {
-  // const start = new Date()
-  // await next()
-  // const ms = new Date() - start
-  // console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+app.use(async (ctx,next) => {
+  await next()
+  const start = new Date()
+  const ms = new Date() - start
+  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
+});
+
+app.use(async (ctx,next)=>{
   return next().catch((err) => {
     if (err.status == 401) {
       ctx.status = 401;
@@ -53,7 +56,7 @@ app.use(async (ctx, next) => {
       throw err;
     }
   });
-});
+})
 
 app.use(
   koajwt({

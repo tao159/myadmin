@@ -83,8 +83,9 @@ class userController{
     //用户登录
     static async login(ctx){
         const req=ctx.request.body
+        console.log(ctx.request.body);
         if(!req.mobileNo||!req.password){
-            console.log(ctx.request.body);
+           
             return ctx.body={
                 code:'-1',
                 msg:'用户名或密码不能为空'

@@ -21,9 +21,9 @@ service.interceptors.request.use(
     //   "Content-Type": "application/x-www-form-urlencoded",
     // };
     // const token = getCookie("名称");
-    const token = "";
+    const token = "123";
     if (token) {
-      config.params = { token }; //如果要求携带在参数中
+    //   config.params = { token }; //如果要求携带在参数中
       config.headers.token = token; //如果要求携带在请求头中
     }
     return config;
@@ -34,15 +34,11 @@ service.interceptors.request.use(
 );
 
 //响应拦截器
-service.interceptors.request.use(
-    
-  (response) => {
-    debugger
+service.interceptors.response.use((response) => {
     return response;
   },
   (error) => {
     /***** 接收到异常响应的处理开始 *****/
-    debugger
     if (error && error.response) {
       // 1.公共错误处理
       // 2.根据响应码具体处理
@@ -58,7 +54,6 @@ service.interceptors.request.use(
           break;
         case 404:
           error.message = "请求错误,未找到该资源";
-          window.location.href = "/NotFound";
           break;
         case 405:
           error.message = "请求方法未允许";
@@ -94,7 +89,6 @@ service.interceptors.request.use(
       }
       error.message("连接服务器失败");
     }
-    debugger
     Message.error(error.message);
     /***** 处理结束 *****/
     //如果不需要错误处理，以上的处理过程都可省略

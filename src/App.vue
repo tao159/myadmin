@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { requestPost } from "@/common/axios";
+import { requestPost} from "@/common/axios";
 export default {
   name: "App",
   methods: {
