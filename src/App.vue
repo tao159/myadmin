@@ -1,19 +1,22 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div id="app"></div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { requestPost } from "@/common/axios";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  methods: {
+    testPost(){
+      requestPost('user/login',{mobileNo:"15901525103",password:"123456"}).then(res=>{
+        console.log(res)
+      })
+    }
+  },
+  mounted() {
+    this.testPost()
+  },
+};
 </script>
 
 <style>
