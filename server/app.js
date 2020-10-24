@@ -9,9 +9,10 @@ const logger = require("koa-logger");
 const index = require("./routes/index");
 const users = require("./routes/users");
 
+
 //引入user路由
 const user=require("./routes/user")
-
+const menu=require("./routes/menu")
 const koajwt = require("koa-jwt");
 
 //解决跨域
@@ -62,14 +63,15 @@ app.use(
   koajwt({
     secret: "123456",
   }).unless({
-    path: [/^\/user\/regist/, /^\/user\/login/],
+    path: [/^\/user\/regist/, /^\/user\/login/,/^\/menu\/menuList/],
   })
 );
-
+console.log(menu)
 // routes
 app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());
 app.use(user.routes(), user.allowedMethods());
+app.use(menu.routes(), menu.allowedMethods());
 // error-handling
 app.on("error", (err, ctx) => {
   console.error("server error", err, ctx);

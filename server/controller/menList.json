@@ -1,0 +1,52 @@
+{
+  "path": "/order",
+  "name": "order-manage",
+  "meta": {
+    "name": "订单管理",
+    "icon": "icon-email"
+  },
+  "children": [
+    {
+      "path": "list",
+      "name": "order-list",
+      "meta": {
+        "name": "订单列表",
+        "icon": "icon-quit"
+      }
+    },
+    {
+      "path": "product",
+      "name": "product-manage",
+      "meta": {
+        "name": "生产管理",
+        "icon": "icon-service"
+      },
+      "children": [
+        {
+          "path": "list",
+          "name": "product-list",
+          "meta": {
+            "name": "生产列表",
+            "icon": "icon-nav"
+          }
+        },
+        {
+          "path": "review",
+          "name": "review-manage",
+          "meta": {
+            "name": "审核管理",
+            "icon": "icon-finance-manage"
+          }
+        }
+      ]
+    },
+    {
+      "path": "returnGoods",
+      "name": "return-goods",
+      "meta": {
+        "name": "退货管理",
+        "icon": "icon-product-manage"
+      }
+    }
+  ]
+}

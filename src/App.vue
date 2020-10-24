@@ -1,21 +1,24 @@
 <template>
-  <div id="app"></div>
+    <div>
+        
+    </div>
 </template>
 
 <script>
-import { requestPost} from "@/common/axios";
+
 export default {
   name: "App",
+  data() {
+    return {
+      
+    };
+  },
+  
+  
   methods: {
-    testPost(){
-      requestPost('user/login',{mobileNo:"15901525103",password:"123456"}).then(res=>{
-        console.log(res)
-      })
-    }
+      
   },
-  mounted() {
-    this.testPost()
-  },
+  mounted() {},
 };
 </script>
 

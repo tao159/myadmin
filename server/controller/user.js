@@ -140,7 +140,7 @@ class userController{
                     }
                 }else{
                     let data=await userModule.getUserInfo(req.mobileNo)
-                    if(rq.mobileNo==data.mobileNo){
+                    if(req.mobileNo==data.mobileNo){
                         const info={
                             createdAt:data.createdAt,
                             updatedAt:data.updatedAt,
