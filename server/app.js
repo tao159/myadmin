@@ -63,10 +63,10 @@ app.use(
   koajwt({
     secret: "123456",
   }).unless({
-    path: [/^\/user\/regist/, /^\/user\/login/,/^\/menu\/menuList/],
+    path: [/^\/user\/regist/, /^\/user\/login/,/^\/menu\/menuList/,/^\/user\/getUserInfo/],
   })
 );
-console.log(menu)
+
 // routes
 app.use(index.routes(), index.allowedMethods());
 app.use(users.routes(), users.allowedMethods());

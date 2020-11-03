@@ -1,8 +1,9 @@
 const Router = require("koa-router");
 // const menuController = require("../controller/menu");
-var path = require('path'); //系统路径模块
-var fs = require('fs');
+
 const menuController=require('../controller/menu')
+const userController=require('../controller/user')
+
 const router = new Router({
   prefix: "/menu",
 });

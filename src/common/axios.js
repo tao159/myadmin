@@ -23,7 +23,7 @@ service.interceptors.request.use(
     // const token = getCookie("名称");
     const token = "123";
     if (token) {
-    //   config.params = { token }; //如果要求携带在参数中
+      //   config.params = { token }; //如果要求携带在参数中
       config.headers.token = token; //如果要求携带在请求头中
     }
     return config;
@@ -34,10 +34,12 @@ service.interceptors.request.use(
 );
 
 //响应拦截器
-service.interceptors.response.use((response) => {
+service.interceptors.response.use(
+  (response) => {
     return response;
   },
   (error) => {
+    console.log('---',error)
     /***** 接收到异常响应的处理开始 *****/
     if (error && error.response) {
       // 1.公共错误处理
@@ -96,48 +98,60 @@ service.interceptors.response.use((response) => {
   }
 );
 
-let agentArr=['/api']
+let agentArr = ["/apiWIFI","api4G"];
 
-export const requestGet=((url,params,baseUrl)=>{
-    let agent=baseUrl?agentArr[baseUrl]:agentArr[0]
-    return new Promise((resolve,reject)=>{
-        service.get(`${agent}/${url}`,{params}).then(res=>{
-            resolve(res)
-        }).catch(error=>{
-            reject(error)
-        })
-    })
-})
+export const requestGet = (url, params, baseUrl) => {
+  let agent = baseUrl ? agentArr[baseUrl] : agentArr[0];
+  return new Promise((resolve, reject) => {
+    service
+      .get(`${agent}/${url}`, { params })
+      .then(({ data }) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
 
-export const requestPost=((url,params,baseUrl)=>{
-    let agent=baseUrl?agentArr[baseUrl]:agentArr[0]
-    return new Promise((resolve,reject)=>{
-        service.post(`${agent}/${url}`,params).then(res=>{
-            resolve(res)
-        }).catch(error=>{
-            reject(error)
-        })
-    })
-})
+export const requestPost = (url, params, baseUrl) => {
+  let agent = baseUrl ? agentArr[baseUrl] : agentArr[0];
+  return new Promise((resolve, reject) => {
+    service
+      .post(`${agent}/${url}`, params)
+      .then(({ data }) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
 
-export const requestPatch=((url,params,baseUrl)=>{
-    let agent=baseUrl?agentArr[baseUrl]:agentArr[0]
-    return new Promise((resolve,reject)=>{
-        service.patch(`${agent}/${url}`,{params}).then(res=>{
-            resolve(res)
-        }).catch(error=>{
-            reject(error)
-        })
-    })
-})
+export const requestPatch = (url, params, baseUrl) => {
+  let agent = baseUrl ? agentArr[baseUrl] : agentArr[0];
+  return new Promise((resolve, reject) => {
+    service
+      .patch(`${agent}/${url}`, { params })
+      .then(({ data }) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};
 
-export const requestPut=((url,params,baseUrl)=>{
-    let agent=baseUrl?agentArr[baseUrl]:agentArr[0]
-    return new Promise((resolve,reject)=>{
-        service.put(`${agent}/${url}`,{params}).then(res=>{
-            resolve(res)
-        }).catch(error=>{
-            reject(error)
-        })
-    })
-})
+export const requestPut = (url, params, baseUrl) => {
+  let agent = baseUrl ? agentArr[baseUrl] : agentArr[0];
+  return new Promise((resolve, reject) => {
+    service
+      .put(`${agent}/${url}`, { params })
+      .then(({ data }) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+};

@@ -1,52 +1,98 @@
 {
-  "path": "/order",
-  "name": "order-manage",
-  "meta": {
-    "name": "订单管理",
-    "icon": "icon-email"
-  },
-  "children": [
+  "result": [
     {
-      "path": "list",
-      "name": "order-list",
-      "meta": {
-        "name": "订单列表",
-        "icon": "icon-quit"
-      }
-    },
-    {
-      "path": "product",
-      "name": "product-manage",
-      "meta": {
-        "name": "生产管理",
-        "icon": "icon-service"
-      },
+      "name": "表格",
+      "url": "",
+      "icon": "icon-form-fill",
+      "id": "1",
       "children": [
         {
-          "path": "list",
-          "name": "product-list",
-          "meta": {
-            "name": "生产列表",
-            "icon": "icon-nav"
-          }
+          "name": "表格1",
+          "url": "table_1",
+          "icon": "",
+          "id": "testadfdasdf"
         },
         {
-          "path": "review",
-          "name": "review-manage",
-          "meta": {
-            "name": "审核管理",
-            "icon": "icon-finance-manage"
-          }
+          "name": "表格2",
+          "url": "table_2",
+          "icon": "",
+          "id": "testassdf"
         }
       ]
     },
     {
-      "path": "returnGoods",
-      "name": "return-goods",
-      "meta": {
-        "name": "退货管理",
-        "icon": "icon-product-manage"
-      }
+      "name": "components",
+      "url": "/components",
+      "icon": "icon-all-fill",
+      "id": "aokndfdasdf",
+      "children":[]
+    },
+    {
+      "name": "nest",
+      "url": "",
+      "icon": "icon-salescenter",
+      "id": "yuikmnmnbh",
+      "children": [
+        {
+          "name": "nest-1",
+          "url": "",
+          "icon": "",
+          "id": "yuiktgbnm",
+          "children": [
+            {
+              "name": "nest-1-1",
+              "url": "/nest-1-1",
+              "icon": "",
+              "id": "yuiunmgbnm"
+            }
+          ]
+        },
+        {
+          "name": "nest-2",
+          "url": "",
+          "icon": "icon-form-fill",
+          "id": "yuiktime"
+        }
+      ]
+    },
+    {
+      "name": "eChart",
+      "url": "",
+      "icon": "icon-tradingdata",
+      "id": "aeadfdasdf",
+      "children": [
+        {
+          "name": "图表1",
+          "url": "eCharts_1",
+          "icon": "",
+          "id": "ddsfdasdf"
+        },
+        {
+          "name": "图表2",
+          "url": "eCharts_2",
+          "icon": "",
+          "id": "vsdfdfdasdf"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "url": "",
+      "icon": "icon-connections",
+      "children": [
+        {
+          "name": "树形结构1",
+          "url": "tree_1",
+          "icon": "",
+          "id": "sdfcradfdasdf"
+        },
+        {
+          "name": "树形结构2",
+          "url": "tree_2",
+          "icon": "",
+          "id": "qpdoadfdasdf"
+        }
+      ]
     }
   ]
 }

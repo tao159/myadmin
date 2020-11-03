@@ -1,0 +1,39 @@
+.el-menu-vertical{
+  height:-webkit-fill-available;
+  background:$menuBg;
+  color:$menuText;
+  &>div>.el-menu-item{
+    color:$menuText;
+    &:hover{
+      background:$menuHover
+    }
+    &:focus{
+      background: transparent;
+      color:$menuActiveText
+    }
+  }
+  .icon{
+    font-size:18px;
+    color:$menuText;
+    margin-right:15px;
+  }
+  .el-submenu__title{
+    color:$menuText;
+    &:hover{
+      background:$menuHover
+    }
+  }
+  .el-menu.el-menu--inline{
+    background:$subMenuBg;
+    li{
+      color:$menuText;
+      &:hover{
+        background:$subMenuHover
+      }
+      &:focus{
+        background: transparent;
+        color:$menuActiveText
+      }
+    }
+  }
+}
