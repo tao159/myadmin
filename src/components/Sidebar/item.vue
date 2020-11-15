@@ -1,24 +1,31 @@
 <template>
-  <el-menu-item @click="goPage(obj)">
-    <!-- <i :class="[obj.icon?'icon iconfont ' + obj.icon:'']"></i> -->
+  <el-menu-item @click="goPage(obj)" :index="obj.id">
+    <i v-if="obj.icon!=''" :class="'icon iconfont '+obj.icon"></i>
     <span slot="title">{{ obj.name }}</span>
   </el-menu-item>
 </template>
 
 <script>
+import { mapMutations, mapActions } from "vuex";
 export default {
+  watch:{
+    
+  },
   props: {
     obj: {
       required: true,
     },
   },
-  methods:{
-      goPage(item){
-          this.$router.push({path:item.url})
-      }
+  methods: {
+    ...mapActions('base',{
+      setActiveTag:'activeAction'
+    }),
+    goPage(item) {
+      this.setActiveTag(''+ item.id)
+      this.$router.push({ path: item.url });
+    },
   },
-  mounted() {
-  },
+  mounted() {},
 };
 </script>
 

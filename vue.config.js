@@ -3,6 +3,7 @@ const path = require("path");
 function resolve(dir) {
   return path.join(__dirname, dir);
 }
+
 module.exports = {
   publicPath: '/',
   outputDir: 'dist',
@@ -10,19 +11,13 @@ module.exports = {
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    port: 8080,
+       port: 8080,
     open: true,
-    overlay: {
-      warnings: false,
-      errors: true
-    }
-  },
-  lintOnSave: false,
-  devServer: {
     overlay: {
       warnings: false,
       errors: false,
     },
+    hotOnly: true,
     proxy: {
       "/api4G": {
         target: "http://172.20.10.2:3000",
@@ -46,6 +41,8 @@ module.exports = {
         '@': resolve('src'),
       },
     },
+    plugins:[
+    ]
   },
   css: {
     loaderOptions: {
@@ -55,6 +52,10 @@ module.exports = {
       
     }
   },
+  transpileDependencies: [
+    'vue-echarts',
+    'resize-detector'
+  ],
   chainWebpack(config){
     config.plugin('preload').tap(() => [
       {

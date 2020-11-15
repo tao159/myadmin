@@ -11,6 +11,7 @@ const service = axios.create({
 //请求拦截器
 service.interceptors.request.use(
   (config) => {
+    
     /*
     发送请求前的一些处理
         数据转化，配置请求头，设置token，设置loading等
@@ -36,6 +37,7 @@ service.interceptors.request.use(
 //响应拦截器
 service.interceptors.response.use(
   (response) => {
+    console.log(response)
     return response;
   },
   (error) => {

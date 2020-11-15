@@ -48,10 +48,13 @@ export default {
     };
   },
   methods: {
-    ...mapMutations("user", {
+    ...mapMutations('user',{
       setMenuList: "SET_MENU_LIST",
       setToken:"SET_TOKEN",
       setUserInfo:"SET_USER_INFO"
+    }),
+    ...mapMutations('base',{
+      setActiveTag: "SET_ACTIVE_TAG"
     }),
     loginSystem(formName) {
       this.$refs[formName].validate((valid) => {
@@ -61,6 +64,7 @@ export default {
               this.setMenuList(data.menuList.result);
               this.setToken(data.token);
               this.setUserInfo(data.mobileNo)
+              this.setActiveTag(data.menuList.result[0].id)
               this.$router.replace({ name: "home" });
             }
           });

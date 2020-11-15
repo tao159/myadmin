@@ -2,7 +2,13 @@
   height:-webkit-fill-available;
   background:$menuBg;
   color:$menuText;
-  &>div>.el-menu-item{
+  &:not(.el-menu--collapse){
+    width: 200px;
+  }
+  .el-menu-item.is-active{
+    color:$menuActiveText !important;
+  }
+  &>.el-menu-item{
     color:$menuText;
     &:hover{
       background:$menuHover

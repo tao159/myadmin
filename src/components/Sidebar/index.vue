@@ -1,21 +1,20 @@
 <template>
-  <el-menu class="el-menu-vertical"
+  <el-menu
+    class="el-menu-vertical"
+    :default-active="active"
+    :collapse="isCollapse"
+   
     :unique-opened="true"
   >
     <template v-for="item in menuList">
-      <Item v-if="!item.children||item.children.length==0" :obj="item" :key="''+item.id" :index="''+item.id"/>
-      <SubMenu v-else :obj="item" :key="''+item.id" :index="''+item.id"/>
+      <Item
+        v-if="!item.children || item.children.length == 0"
+        :obj="item"
+        :key="'' + item.id"
+        :index="item.id"
+      />
+      <SubMenu v-else :obj="item" :key="'' + item.id" :index="item.id" />
     </template>
-<!-- v-for="item in menuList" -->
-    <!-- <Item v-if="!item.children||item.children.length==0" :item="item" :key="item.id" -->
-     <!-- :index="item.id"> -->
-      <!-- <el-submenu v-else :key="''+item.id" :index="''+item.id">
-        <template slot="title">
-          <i :class="'icon iconfont'+item.icon "></i>
-          <span>{{item.name}}</span>
-        </template>
-        <Item :list="item.children"/>
-      </el-submenu> -->
   </el-menu>
 </template>
 
@@ -27,20 +26,24 @@ import "@/styles/variables.scss";
 export default {
   components: {
     SubMenu,
-    Item
+    Item,
   },
   computed: {
-    ...mapGetters(["menuList"]),
+    ...mapGetters(["menuList", "activeTag","isCollapse"]),
   },
   data() {
-    return {};
+    return {
+      active: null,
+    };
   },
   methods: {},
-  created() {
+  mounted() {
+    let _this = this;
+    this.$nextTick(() => {
+      _this.active = _this.activeTag;
+    });
   },
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

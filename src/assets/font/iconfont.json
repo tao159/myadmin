@@ -6,6 +6,83 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1265",
+      "name": "人民币",
+      "font_class": "renminbi",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "113523",
+      "name": "order",
+      "font_class": "order",
+      "unicode": "e68f",
+      "unicode_decimal": 59023
+    },
+    {
+      "icon_id": "1876349",
+      "name": "我的产品",
+      "font_class": "wodechanpin",
+      "unicode": "e679",
+      "unicode_decimal": 59001
+    },
+    {
+      "icon_id": "2742645",
+      "name": "客户",
+      "font_class": "kehu",
+      "unicode": "e66f",
+      "unicode_decimal": 58991
+    },
+    {
+      "icon_id": "5330237",
+      "name": "人民币",
+      "font_class": "renminbi1",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "15089308",
+      "name": "客户",
+      "font_class": "kehu1",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    },
+    {
+      "icon_id": "16370609",
+      "name": "order",
+      "font_class": "order1",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    },
+    {
+      "icon_id": "316185",
+      "name": "home",
+      "font_class": "18",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "1185455",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
+      "icon_id": "11686852",
+      "name": "home",
+      "font_class": "home2",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "12578858",
+      "name": "home",
+      "font_class": "home3",
+      "unicode": "e6bc",
+      "unicode_decimal": 59068
+    },
+    {
       "icon_id": "11488122",
       "name": "sales center",
       "font_class": "salescenter",

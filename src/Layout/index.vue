@@ -1,6 +1,6 @@
 <template>
   <el-container class="containerWrapper">
-    <el-aside width="200px">
+    <el-aside width="auto">
       <Sidebar />
     </el-aside>
     <el-container>

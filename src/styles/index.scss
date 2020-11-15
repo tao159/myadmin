@@ -216,13 +216,12 @@ aside {
 }
 .headerWrapper {
   height: 50px;
+  display:flex;
   .headerLeft {
+    flex:1;
     height: 100%;
-    position: relative;
+    display:flex;
     .el-button-group {
-      position: absolute;
-      left: 0;
-      top: 0;
       height: 100%;
       .el-button {
         color: #000;
@@ -236,11 +235,35 @@ aside {
         }
       }
     }
-    .el-dropdown {
-      position: absolute;
-      right: 20px;
-      top: 5px;
-      cursor: pointer;
+    .breadcrumb{
+
+      .el-breadcrumb{
+        line-height:50px;
+        margin-top:1px;
+        margin-left:10px;
+        .el-breadcrumb__separator{
+          margin:0 7px;
+        }
+        .el-breadcrumb__inner{
+          
+          &:not(.is-link){
+            color:#97a8be;
+          }
+        }
+      }
+      
     }
   }
+  .headerRight {
+    flex:1;
+    text-align:right;
+    .el-dropdown {
+      cursor: pointer;
+      margin-top:5px;
+      margin-right:20px;
+    }
+  }
+}
+.el-main{
+  background:$globalBg;
 }
